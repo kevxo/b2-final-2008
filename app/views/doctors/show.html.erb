@@ -9,8 +9,13 @@
   <h4><%= @doctor.hospital.name %></h4>
   <h4>Patients:</h4>
   <% @doctor.patients.each do |patient| %>
-    <ul>
-      <li><%= patient.name %></li>
-    </ul>
+    <section id="patient-<%= patient.id %>">
+      <ul>
+        <li><%= patient.name %></li>
+      </ul>
+      <%= form_tag "/patients/#{patient.id}", method: :delete do %>
+        <%= submit_tag 'Remove' %>
+      <% end %>
+    </section>
   <% end %>
 </div>
