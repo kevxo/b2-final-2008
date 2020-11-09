@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   resources :doctors, only: [:show, :update]
   resources :hospitals, only: [:show]
-  resources :patients, only: [:destroy]
+  resources :patients, only: [:index, :destroy]
 end
